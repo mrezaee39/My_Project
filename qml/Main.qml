@@ -11,4 +11,8 @@ ApplicationWindow {
         text: qsTr("Hello, World!")
         anchors.centerIn: parent
     }
+    /*
+   Add here a button. the name of this button is generated
+*/
+    
 }
