@@ -32,18 +32,20 @@ def parse_response(response_lines):
     return generated_code
 
 
-def generate_qml_from_file(input_file):
-    """Main function to generate QML from a prompt read from an input file and print it to the terminal."""
+def generate_qml_from_files(input_files):
+    """Main function to generate QML from prompts read from input files and print them to the terminal."""
     try:
-        # Read the prompt from the input file
-        with open(input_file, 'r') as file:
-            prompt = file.read()
-        
-        response_lines = generate_qml_code(prompt)
-        generated_code = parse_response(response_lines)
-        
-        print("Output ................................................................:")
-        print(generated_code)
+        for input_file in input_files:
+            print(f"Processing file: {input_file}")
+            # Read the prompt from the input file
+            with open(input_file, 'r') as file:
+                prompt = file.read()
+            
+            response_lines = generate_qml_code(prompt)
+            generated_code = parse_response(response_lines)
+            
+            print("Output ................................................................:")
+            print(generated_code)
         
     except Exception as e:
         print(f"An error occurred: {e}")
@@ -51,5 +53,8 @@ def generate_qml_from_file(input_file):
 
 # Example usage:
 if __name__ == "__main__":
-    input_file = "/home/mohammad/Documents/03,Lebenslauf/Code-Practis-C++/my_project/main.cpp"  # Replace with the path to your input QML file
-    generate_qml_from_file(input_file)
+    input_files = [
+        "/home/mohammad/Documents/03,Lebenslauf/Code-Practis-C++/my_project/qml/Main.qml",  # Path to your first input file
+        "/home/mohammad/Documents/03,Lebenslauf/Code-Practis-C++/my_project/MyClass.cpp",  # Path to your second input file
+    ]
+    generate_qml_from_files(input_files)

@@ -2,8 +2,10 @@
 #define MYCLASS_H
 
 #include <QObject>
+#include <QDebug>
 
-class MyClass : public QObject {
+class MyClass : public QObject 
+{
     Q_OBJECT
     Q_PROPERTY(QString message READ message WRITE setMessage NOTIFY messageChanged)
 
@@ -15,6 +17,11 @@ public:
 
 signals:
     void messageChanged();
+
+public slots:
+    void onButtonClicked() {
+    qDebug() << "Button clicked!";
+    }
 
 private:
     QString m_message;
