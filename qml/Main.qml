@@ -7,12 +7,23 @@ ApplicationWindow {
     height: 480
     title: qsTr("Hello QML")
 
-    Text {
-        text: qsTr("Hello, World!")
+   Label {
+        id: label 
+        text: "Hello World"
         anchors.centerIn: parent
     }
-    /*
-   Add here a button. the name of this button is generated
-*/
-    
+/* by clicking on this button text of Lable shoud be toggled from Hello World to Hello User*/
+    Button {
+        id: button // give the button an id
+        text: "Click me!"
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+
+        onClicked: {        
+            if (label.text === "Hello World") {
+                label.text = "Hello User";
+            } else {
+                label.text = "Hello World";
+        }   }
+    }
 }

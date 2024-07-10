@@ -5,11 +5,11 @@ def generate_qml_code(prompt):
     """Generates QML code by sending the prompt to the API."""
     url = "http://localhost:11434/api/generate"
     payload = {
-        "model": "llama3",
+        "model": "codellama",
         "prompt": prompt,
         "temperature": 0,
     }
-    
+        
     response = requests.post(url, json=payload)
     response.raise_for_status()
     
@@ -42,7 +42,7 @@ def generate_qml_from_file(input_file):
         response_lines = generate_qml_code(prompt)
         generated_code = parse_response(response_lines)
         
-        print("Here is an example of QML code generated from the input file prompt:")
+        print("Output ................................................................:")
         print(generated_code)
         
     except Exception as e:
@@ -51,5 +51,5 @@ def generate_qml_from_file(input_file):
 
 # Example usage:
 if __name__ == "__main__":
-    input_file = "qml/Main.qml"  # Replace with the path to your input QML file
+    input_file = "/home/mohammad/Documents/03,Lebenslauf/Code-Practis-C++/my_project/main.cpp"  # Replace with the path to your input QML file
     generate_qml_from_file(input_file)
