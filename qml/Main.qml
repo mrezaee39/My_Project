@@ -1,5 +1,3 @@
-
-
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
@@ -7,28 +5,50 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello QML")
+    title: qsTr("Smart Home")
 
-   Label {
-        id: label 
-        text: "Hello World"
+    property string newLable: "Hello, QML!"
+
+    Column {
+        width: parent.width
         anchors.centerIn: parent
-    }
+/*I want this ListView is in the middle of the window*/
+        ListView {
+            id: labelListView
+            width: parent.width
+            height: 200
+            model: ListModel {
+                ListElement { text: "!!!" }
+            }
+            delegate: Label {
+                text: model.text
+            }
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
-    Button {
-        id: button // give the button an id
-        text: "Click me!"
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        
-        onClicked: {  
-            myclass.onButtonClicked() 
-            if (label.text === "Hello World") {
-                label.text = "Hello User";
-            } else {
-                label.text = "Hello World";
-        }   }
+        Row {
+            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            TextField {
+                id: inputField
+                placeholderText: "---"
+                width: parent.width * 0.7
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            Button {
+                id: button
+                text: "Submit!"
+                anchors.verticalCenter: parent.verticalCenter
+
+                onClicked: {
+                    if (inputField.text !== "") {
+                        labelListView.model.append({"text": inputField.text})
+                        inputField.text = ""
+                    }
+                }
+            }
+        }
     }
 }
-
-

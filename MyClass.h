@@ -19,8 +19,8 @@ signals:
     void messageChanged(); 
 
 public slots:
-    void onButtonClicked() {
-    qDebug() << "Button clicked!";
+    void onButtonClicked(const QString &input) {
+    qDebug() << "Button clicked! input : "<< input ;
     }
 
 private:
