@@ -7,21 +7,23 @@ ApplicationWindow {
     height: 480
     title: qsTr("Smart Home")
 
-    property string newLable: "Hello, QML!"
+    property string newLabel: "Hello, QML!"
 
     Column {
         width: parent.width
         anchors.centerIn: parent
-/*I want this ListView is in the middle of the window*/
+
         ListView {
             id: labelListView
-            width: parent.width
+            width: parent.width * 0.8
             height: 200
             model: ListModel {
                 ListElement { text: "!!!" }
             }
             delegate: Label {
                 text: model.text
+                width: parent.width // Ensures each label takes the full width of the ListView
+                horizontalAlignment: Text.AlignHCenter // Centers the text horizontally
             }
             anchors.horizontalCenter: parent.horizontalCenter
         }
