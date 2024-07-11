@@ -16,7 +16,7 @@ public:
     void setMessage(const QString &message);
 
 signals:
-    void messageChanged();
+    void messageChanged(); 
 
 public slots:
     void onButtonClicked() {

@@ -21,7 +21,7 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         
-        onClicked: {        /*I get an Error, tell me how can I solve it : qrc:/qml/Main.qml:25: ReferenceError: myclass is not defined*/
+        onClicked: {  
             myclass.onButtonClicked() 
             if (label.text === "Hello World") {
                 label.text = "Hello User";
@@ -30,3 +30,5 @@ ApplicationWindow {
         }   }
     }
 }
+
+
