@@ -18,12 +18,25 @@ ApplicationWindow {
             width: parent.width * 0.8
             height: 200
             model: ListModel {
-                ListElement { text: "!!!" }
+                ListElement { text: "task 1"; enabled: true }
             }
-            delegate: Label {
-                text: model.text
-                width: parent.width // Ensures each label takes the full width of the ListView
-                horizontalAlignment: Text.AlignHCenter // Centers the text horizontally
+            delegate: Row {
+                width: parent.width
+                height: 40 // Adjust height as needed for each row
+                spacing: 10 // Space between label and button
+
+                Label {
+                    text: model.enabled ? model.text : ""
+                    width: parent.width * 0.6
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
+                Button {
+                    text: model.enabled ? "ON" : "OFF"
+                    onClicked: {
+                        model.enabled = !model.enabled
+                    }
+                }
             }
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
@@ -32,20 +45,28 @@ ApplicationWindow {
 
         Item {
             width: parent.width
-            height: 20 // Space between ListView and Row
+            height: 20
         }
 
         Row {
             width: parent.width
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom // Anchors the Row to the bottom of the parent
-            anchors.bottomMargin: 20 // Optional: adds some margin from the bottom
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 20
 
             TextField {
                 id: inputField
                 placeholderText: "---"
                 width: parent.width * 0.7
                 anchors.verticalCenter: parent.verticalCenter
+                Keys.onReleased: {
+                    if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
+                        if (inputField.text !== "") {
+                            labelListView.model.append({"text": inputField.text, "enabled": true})
+                            inputField.text = ""
+                        }
+                    }
+                }
             }
 
             Button {
@@ -55,7 +76,7 @@ ApplicationWindow {
 
                 onClicked: {
                     if (inputField.text !== "") {
-                        labelListView.model.append({"text": inputField.text})
+                        labelListView.model.append({"text": inputField.text, "enabled": true})
                         inputField.text = ""
                     }
                 }

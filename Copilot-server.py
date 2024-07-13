@@ -2,7 +2,9 @@ import os
 import json
 import requests
 
-os.environ["OLLAMA_HOST"] = "https://2dad-34-83-172-5.ngrok-free.app"
+
+#This need always to be fixed always regarding the output of the google.colab
+os.environ["OLLAMA_HOST"] = "https://bde3-35-187-235-239.ngrok-free.app"
 
 OLLAMA_HOST = os.getenv("OLLAMA_HOST")
 if not OLLAMA_HOST:
