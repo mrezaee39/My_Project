@@ -41,6 +41,6 @@ await asyncio.gather(
 
 
 
-#export OLLAMA_HOST= https://8249-34-125-179-11.ngrok.io
+#export OLLAMA_HOST=https://bde3-35-187-235-239.ngrok-free.app
 #ollama list
 #ollama run mistral
