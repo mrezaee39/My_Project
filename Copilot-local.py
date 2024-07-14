@@ -5,7 +5,7 @@ def generate_qml_code(prompt):
     """Generates QML code by sending the prompt to the API."""
     url = "http://localhost:11434/api/generate"
     payload = {
-        "model": "codellama",
+        "model": "llama3",
         "prompt": prompt,
         "temperature": 0,
     }

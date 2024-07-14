@@ -19,7 +19,13 @@ signals:
     void messageChanged(); 
 
 public slots:
+<<<<<<< HEAD
     void onButtonClicked();
+=======
+    void onButtonClicked(const QString &input) {
+    qDebug() << "Button clicked! input : "<< input ;
+    }
+>>>>>>> feature2
 
 private:
     QString m_message;
