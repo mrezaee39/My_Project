@@ -12,3 +12,7 @@ void MyClass::setMessage(const QString &message) {
         emit messageChanged();
     }
 }
+
+void MyClass::onButtonClicked() {
+   qDebug() << "Hello From C++!";
+    }
