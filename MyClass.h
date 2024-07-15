@@ -2,6 +2,7 @@
 #define MYCLASS_H
 
 #include <QObject>
+#include <QUdpSocket>
 #include <QDebug>
 
 class MyClass : public QObject 
@@ -21,8 +22,12 @@ signals:
 public slots:
     int onButtonClicked(int i);
 
+    void handleReadyRead();
+
 private:
     QString m_message;
+
+    QUdpSocket *udpSocket;
 };
 
 #endif // MYCLASS_H
