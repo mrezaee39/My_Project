@@ -8,6 +8,7 @@ ApplicationWindow {
     title: qsTr("Smart Home")
 
     property string newLabel: "Hello, QML!"
+    property int sig_Test: 42
 
     Column {
         width: parent.width
@@ -75,6 +76,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
 
                 onClicked: {
+                    myclass.onButtonClicked(sig_Test) 
                     if (inputField.text !== "") {
                         labelListView.model.append({"text": inputField.text, "enabled": true})
                         inputField.text = ""
