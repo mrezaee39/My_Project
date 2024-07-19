@@ -1,5 +1,7 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource prefix="/">
-    <file>qml/Main.qml</file>
-</qresource>
+<RCC>
+    <qresource prefix="/">
+        <file>qml/Main.qml</file>
+        <file>qml/ListViewDelegate.qml</file>
+        <file>qml/InputRow.qml</file>
+    </qresource>
 </RCC>

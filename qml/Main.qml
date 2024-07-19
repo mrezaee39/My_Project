@@ -1,3 +1,4 @@
+// qml/Main.qml
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
@@ -8,7 +9,7 @@ ApplicationWindow {
     title: qsTr("Smart Home")
 
     property string newLabel: "Hello, QML!"
-    property int sig_Test: 42
+    property int sig_Test: 43
 
     Column {
         width: parent.width
@@ -21,23 +22,9 @@ ApplicationWindow {
             model: ListModel {
                 ListElement { text: "task 1"; enabled: true }
             }
-            delegate: Row {
-                width: parent.width
-                height: 40 // Adjust height as needed for each row
-                spacing: 10 // Space between label and button
-
-                Label {
-                    text: model.enabled ? model.text : ""
-                    width: parent.width * 0.6
-                    horizontalAlignment: Text.AlignHCenter
-                }
-
-                Button {
-                    text: model.enabled ? "ON" : "OFF"
-                    onClicked: {
-                        model.enabled = !model.enabled
-                    }
-                }
+            delegate: ListViewDelegate {
+                enabledProperty: model.enabled
+                textProperty: model.text
             }
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
@@ -49,38 +36,17 @@ ApplicationWindow {
             height: 20
         }
 
-        Row {
-            width: parent.width
+        InputRow {
+            id: inputRow
+            listView: labelListView
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 20
-
-            TextField {
-                id: inputField
-                placeholderText: "---"
-                width: parent.width * 0.7
-                anchors.verticalCenter: parent.verticalCenter
-                Keys.onReleased: {
-                    if (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) {
-                        if (inputField.text !== "") {
-                            labelListView.model.append({"text": inputField.text, "enabled": true})
-                            inputField.text = ""
-                        }
-                    }
-                }
-            }
-
-            Button {
-                id: button
-                text: "Submit!"
-                anchors.verticalCenter: parent.verticalCenter
-
-                onClicked: {
-                    myclass.onButtonClicked(sig_Test) 
-                    if (inputField.text !== "") {
-                        labelListView.model.append({"text": inputField.text, "enabled": true})
-                        inputField.text = ""
-                    }
+            onButtonClicked: {
+                myclass.onButtonClicked(sig_Test)
+                if (inputRow.textField.text !== "") {
+                    labelListView.model.append({"text": inputRow.textField.text, "enabled": true})
+                    inputRow.textField.text = ""
                 }
             }
         }
