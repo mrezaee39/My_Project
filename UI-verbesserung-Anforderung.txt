@@ -1,0 +1,5 @@
+1-Time Display: Consider using a more modern font and reducing the border thickness around the time.
+2-Task Labels: Improve the alignment and spacing of the task labels (1#, 2#, 3#) to make them more visually appealing.
+3-Buttons: Make the "ON" buttons more interactive by adding a hover effect or a more modern design.
+4-Input Field: Enhance the input field by increasing its width and adding padding.
+5-Submit Button: Style the "Submit!" button to match modern design standards, perhaps with rounded corners and a slight shadow.
