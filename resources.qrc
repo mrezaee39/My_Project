@@ -3,5 +3,6 @@
         <file>qml/Main.qml</file>
         <file>qml/ListViewDelegate.qml</file>
         <file>qml/InputRow.qml</file>
+        <file>qml/Uhr.qml</file>
     </qresource>
 </RCC>

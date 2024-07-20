@@ -50,5 +50,21 @@ ApplicationWindow {
                 }
             }
         }
+           
+        Rectangle {
+        id: clockFrame
+        anchors.fill: clock
+        anchors.margins: 8 // Adjust the margins to ensure the frame surrounds the component
+        border.color: "blue"
+        border.width: 2
+        z: 0 // Ensure the frame is behind the component
+    }
+        Uhr {
+            id: clock
+            time: uhr.time
+            anchors.top: parent.top
+            anchors.left: parent.left
+            z: 1
+        }
     }
 }
