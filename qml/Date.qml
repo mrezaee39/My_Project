@@ -5,11 +5,11 @@ Item {
     width: 200
     height: 50
 
-    property string time: "00/00/0000"
+    property string date: "00/00/0000"
 
     Text {
         id: dateLabel
-        text: time
+        text: date
         anchors.centerIn: parent
         font.pixelSize: 24
     }
