@@ -44,7 +44,7 @@ ApplicationWindow {
             anchors.bottomMargin: 20
             onButtonClicked: {
                 myclass.onButtonClicked(signal_Test)
-                 console.log(date.toString())
+                 
                 if (inputRow.textField.text !== "") {
                     labelListView.model.append({"text": inputRow.textField.text, "enabled": true})
                     inputRow.textField.text = ""
@@ -52,14 +52,6 @@ ApplicationWindow {
             }
         }
            
-        Rectangle {
-        id: clockFrame
-        anchors.fill: clock
-        anchors.margins: 8 // Adjust the margins to ensure the frame surrounds the component
-        border.color: "blue"
-        border.width: 2
-        z: 0 // Ensure the frame is behind the component
-    }
         Uhr {
             id: clock
             time: uhr.time
