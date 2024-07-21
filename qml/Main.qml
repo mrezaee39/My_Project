@@ -9,7 +9,7 @@ ApplicationWindow {
     title: qsTr("Smart Home")
 
     property string newLabel: "Hello, QML!"
-    property int sig_Test: 43
+    property int signal_Test: 43
 
     Column {
         width: parent.width
@@ -43,7 +43,8 @@ ApplicationWindow {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 20
             onButtonClicked: {
-                myclass.onButtonClicked(sig_Test)
+                myclass.onButtonClicked(signal_Test)
+                 console.log(date.toString())
                 if (inputRow.textField.text !== "") {
                     labelListView.model.append({"text": inputRow.textField.text, "enabled": true})
                     inputRow.textField.text = ""

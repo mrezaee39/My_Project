@@ -16,6 +16,8 @@ add_executable(MyQmlProject
     MyClass.h
     Uhr.cpp
     Uhr.h
+    Date.cpp
+    Date.h
     ${QT_RESOURCES}
 )
 

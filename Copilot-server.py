@@ -4,7 +4,7 @@ import requests
 
 
 #This need always to be fixed always regarding the output of the google.colab
-os.environ["OLLAMA_HOST"] = "https://1c9f-34-138-3-230.ngrok-free.app"
+os.environ["OLLAMA_HOST"] = "https://b435-34-124-145-243.ngrok-free.app"
 
 OLLAMA_HOST = os.getenv("OLLAMA_HOST")
 if not OLLAMA_HOST:
@@ -60,5 +60,5 @@ def generate_qml_from_file(input_file):
 
 # Example usage:
 if __name__ == "__main__":
-    input_file = "/home/mohammad/Documents/03,Lebenslauf/Code-practis/Code-Practis-C++/my_project/qml/Main.qml"  # Replace with the path to your input QML file
+    input_file = "/home/mohammad/Documents/03,Lebenslauf/Code-practis/Code-Practis-C++/my_project/Date.cpp"  # Replace with the path to your input QML file
     generate_qml_from_file(input_file)
