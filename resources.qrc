@@ -4,5 +4,6 @@
         <file>qml/ListViewDelegate.qml</file>
         <file>qml/InputRow.qml</file>
         <file>qml/Uhr.qml</file>
+        <file>qml/Date.qml</file>
     </qresource>
 </RCC>

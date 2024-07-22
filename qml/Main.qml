@@ -44,7 +44,7 @@ ApplicationWindow {
             anchors.bottomMargin: 20
             onButtonClicked: {
                 myclass.onButtonClicked(signal_Test)
-                 
+
                 if (inputRow.textField.text !== "") {
                     labelListView.model.append({"text": inputRow.textField.text, "enabled": true})
                     inputRow.textField.text = ""
@@ -54,10 +54,15 @@ ApplicationWindow {
            
         Uhr {
             id: clock
-            time: uhr.time
+            time_qml: uhr.time
             anchors.top: parent.top
             anchors.left: parent.left
-            z: 1
+        }
+
+        Date {
+            id: calender
+            date_qml: date.toString
+            anchors.top: clock.bottom
         }
     }
 }

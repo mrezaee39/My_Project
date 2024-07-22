@@ -12,6 +12,7 @@ class Uhr : public QObject
 
 public:
     explicit Uhr(QObject *parent = nullptr);
+    ~Uhr();
 
     QString time() const;
 

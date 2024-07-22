@@ -12,6 +12,8 @@ qt5_add_resources(QT_RESOURCES resources.qrc)
 
 add_executable(MyQmlProject
     main.cpp
+    MainWindow.cpp
+    MainWindow.h
     MyClass.cpp
     MyClass.h
     Uhr.cpp

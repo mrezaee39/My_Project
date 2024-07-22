@@ -23,11 +23,14 @@ public:
     int getMonth() const;
     int getYear() const;
 
-    // Utility function
-    QString toString() const;
+
 
 signals:
     void dateChanged();
+
+public slots:
+        // Utility function
+    QString toString() const;
 
 private:
     int m_day;
