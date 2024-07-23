@@ -5,7 +5,7 @@
 #include <QQmlApplicationEngine>
 #include "MyClass.h"
 #include "Uhr.h"
-#include "Date.h"
+#include "datehandler.h"
 
 class MainWindow : public QObject
 {
@@ -18,7 +18,7 @@ private:
     QQmlApplicationEngine engine;
     MyClass myclass;
     Uhr uhr;
-    Date date;
+    DateHandler dateHandler;
 };
 
 #endif // MAINWINDOW_H

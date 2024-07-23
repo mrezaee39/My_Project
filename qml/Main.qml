@@ -59,10 +59,14 @@ ApplicationWindow {
             anchors.left: parent.left
         }
 
-        Date {
-            id: calender
-            date_qml: date.toString
-            anchors.top: clock.bottom
+        // Test Date component
+        Column {
+        anchors.top: clock.bottom
+
+        Label {
+            text: dateHandler.currentDate
+            font.pointSize: 24
         }
     }
+}
 }

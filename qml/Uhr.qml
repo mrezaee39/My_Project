@@ -16,20 +16,4 @@ Item {
 
     }
 
-    Rectangle {
-        id: frame
-        anchors.fill: timeLabel
-        anchors.margins: -2 // Adjust the margins to ensure the frame surrounds the component
-        border.color: "blue"
-        border.width: 2
-        z: 0 // Ensure the frame is behind the component
-    }
-    Rectangle {
-        id: framee
-        anchors.fill: timeLabel
-        anchors.margins: 0 // Adjust the margins to ensure the frame surrounds the component
-        border.color: "red"
-        border.width: 2
-        z: 0 // Ensure the frame is behind the component
-    }
 }
