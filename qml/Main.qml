@@ -1,4 +1,3 @@
-// qml/Main.qml
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
@@ -6,7 +5,7 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Smart Home")
+    title: qsTr("Your Dashboard")
 
     property string newLabel: "Hello, QML!"
     property int signal_Test: 43
@@ -59,13 +58,13 @@ ApplicationWindow {
             anchors.left: parent.left
         }
 
-        // Test Date component
+       
         Column {
         anchors.top: clock.bottom
-
+ /* is this here supposed to be a date-lable? */
         Label {
             text: dateHandler.currentDate
-            font.pointSize: 24
+            font.pointSize: 16
         }
     }
 }
